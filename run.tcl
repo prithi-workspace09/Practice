@@ -12,10 +12,8 @@ set LIBS_ROOT "/home/c2suser16/cadence/FOUNDRY/digital/45nm/LIBS"
 # LEF (physical) file - this is a FILE, not the .lib search path
 set LEF_FILE  "$LIBS_ROOT/lef/gsclib045.fixed.lef"
 
-# Liberty (timing) library - init_lib_search_path must be a DIRECTORY that
-# contains slow.lib. In gsclib045 it is normally under lib/max (slow) and
-# lib/min (fast). Check with: find $LIBS_ROOT -name "slow*.lib"
-set LIB_PATH  [list "$LIBS_ROOT/lib/max" "$LIBS_ROOT/lib"]
+# Liberty (timing) library directory - confirmed: $LIBS_ROOT/lib/max/slow.lib
+set LIB_PATH  "$LIBS_ROOT/lib/max"
 set LIB_FILE  "slow.lib"
 
 set RTL_FILES [list axppa_lf8.v]
